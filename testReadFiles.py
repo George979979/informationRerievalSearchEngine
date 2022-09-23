@@ -20,7 +20,7 @@ print(lines)
 
 
 
-# Output
+# Output1
 #####################################################
 def isInvalidLine(s):
     
@@ -38,3 +38,22 @@ def isInvalidLine(s):
     
     # invalid line
     if(s.startswith('<PARENT>') and s.endswith('</PARENT>')): return True   
+    
+    
+    
+
+    
+# Output2
+#####################################################
+# This method only reads a file that only has one document
+
+### !!! UPDATE NEEDED LATER !!!
+def getFileLines(fileName):
+    
+    
+    testFile = open("test.tex")
+    lines = testFile.read().splitlines()
+    testFile.close()
+    lines = [i for i in lines if not isInvalidLine(i)] # comment line
+    
+    return lines 
